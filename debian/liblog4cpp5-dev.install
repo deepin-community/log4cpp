@@ -1,0 +1,6 @@
+usr/bin/log4cpp-config
+usr/include/*
+usr/lib/*/liblog4cpp.a
+usr/lib/*/liblog4cpp.so
+usr/lib/*/pkgconfig/log4cpp.pc
+usr/share/aclocal/log4cpp.m4

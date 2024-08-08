@@ -1,0 +1,8 @@
+# 01_bump_soname.diff
+02_doc_install_path.diff
+03_aclocal_automake.diff
+04_gcc43.diff
+05_remove_log4cpp_cflags_from_pkgconfig_file.diff
+fix-abs-call
+utf8-encoding
+spelling

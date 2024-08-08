@@ -1,0 +1,27 @@
+From: "A. Maitland Bottoms" <bottoms@debian.org>
+Subject: spelling
+
+Corection of already found by lintian check.
+
+--- a/src/TriggeringEventEvaluatorFactory.cpp
++++ b/src/TriggeringEventEvaluatorFactory.cpp
+@@ -28,7 +28,7 @@
+    {
+       const_iterator i = creators_.find(class_name);
+       if (i != creators_.end())
+-         throw std::invalid_argument("Creator for Triggering event evaluator with type name '" + class_name + "' allready registered");
++         throw std::invalid_argument("Creator for Triggering event evaluator with type name '" + class_name + "' already registered");
+ 
+       creators_[class_name] = create_function;
+    }
+--- a/src/LayoutsFactory.cpp
++++ b/src/LayoutsFactory.cpp
+@@ -36,7 +36,7 @@
+    {
+       const_iterator i = creators_.find(class_name);
+       if (i != creators_.end())
+-         throw std::invalid_argument("Layout creator for type name '" + class_name + "' allready registered");
++         throw std::invalid_argument("Layout creator for type name '" + class_name + "' already registered");
+ 
+       creators_[class_name] = create_function;
+    }

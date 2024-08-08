@@ -1,4 +1,19 @@
 #!/usr/bin/make -f
-
 %:
-	dh $@
+	dh $@ --with autoreconf
+
+override_dh_auto_configure:
+	PTHREAD_LIBS="-lpthread" dh_auto_configure -- --enable-threads=pthread
+
+override_dh_acc:
+	- dh_acc $@
+
+override_dh_auto_install:
+	dh_auto_install
+	# Remove the build path from passed arguments for reproducible builds
+	sed -i -e "s,$(CURDIR),BUILDPATH,g" debian/tmp/usr/bin/log4cpp-config
+
+override_sh_auto_clean:
+	dh_clean
+	rm -f tests/dailyrolling_file.log.*
+	rm -f tests/nesteddir/*

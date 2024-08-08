@@ -1,0 +1,19 @@
+--- a/log4cpp.pc.in
++++ b/log4cpp.pc.in
+@@ -7,4 +7,4 @@
+ Description: C++ library for flexible logging, modeled after Log4j
+ Version: @VERSION@
+ Libs: -L${libdir} @log4cpp_libs@
+-Cflags: -I${includedir} @log4cpp_cflags@
++Cflags: -I${includedir}
+--- a/m4/ac_config_pkgconfig_in.m4
++++ b/m4/ac_config_pkgconfig_in.m4
+@@ -121,7 +121,7 @@
+ fi
+ echo 'Version: @VERSION@' >>$PKGCONFIG_FILE
+ echo 'Libs: -L${libdir} @MODULE_DOWN[]_libs@' >>$PKGCONFIG_FILE
+-echo 'Cflags: -I${includedir} @MODULE_DOWN[]_cflags@' >>$PKGCONFIG_FILE
++echo 'Cflags: -I${includedir}' >>$PKGCONFIG_FILE
+ m4_pushdef([PKGCONFIG_UP], [m4_translit([$1], [a-z], [A-Z])])dnl
+ PKGCONFIG_UP[]_PKGCONFIG="PKGCONFIG_DIR[]$1-config"
+ AC_SUBST(PKGCONFIG_UP[]_PKGCONFIG)

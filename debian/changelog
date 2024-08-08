@@ -1,5 +1,213 @@
-template-repository (1.0-1) unstable; urgency=medium
+log4cpp (1.1.4-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
+  * Improved clean target. (Closes: #1048066)
+  * Update debian/watch to handle rc versions
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- A. Maitland Bottoms <bottoms@debian.org>  Sat, 27 Jul 2024 09:57:14 -0400
+
+log4cpp (1.1.3-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Apply a patch by Vagrant Cascadian to avoid embeddedng the build path in
+    the log4cpp-config file. (Closes: #1020662)
+
+ -- Chris Lamb <lamby@debian.org>  Tue, 10 Jan 2023 16:28:21 +0000
+
+log4cpp (1.1.3-3) unstable; urgency=medium
+
+  * Prepare for glibc 2.31.
+    Replace obsolete function stime by clock_settime. (Closes: #964225)
+  * update standards-version, compat, watch file.
+
+ -- A. Maitland Bottoms <bottoms@debian.org>  Sun, 05 Jul 2020 09:11:37 -0400
+
+log4cpp (1.1.3-2) UNRELEASED; urgency=medium
+
+  * d/control: Fix wrong Vcs-*
+
+ -- Ondřej Nový <onovy@debian.org>  Mon, 01 Oct 2018 09:50:55 +0200
+
+log4cpp (1.1.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * update watch file
+  * wrong dependencies in liblog4cpp5 fixed in 1.1.1-1 (Closes: #861766)
+  * VCS move to salsa
+  * Mark liblog4cpp5v5 Multi-Arch: same. (Closes: #891323) Thanks Helmut!
+  * Adopt collab-maint package (Closes: #879406)
+
+ -- A. Maitland Bottoms <bottoms@debian.org>  Sat, 12 May 2018 17:29:11 -0400
+
+log4cpp (1.1.1-3) unstable; urgency=medium
+
+  * Use right sized buffer on sparc64. Thanks james! (Closes: #835927)
+
+ -- A. Maitland Bottoms <bottoms@debian.org>  Mon, 29 Aug 2016 09:58:51 -0400
+
+log4cpp (1.1.1-2) unstable; urgency=medium
+
+  * fix pthreads configuration (Closes: #835540, #835819)
+  * fix Vcs-Git URL (Closes: #835795)
+
+ -- A. Maitland Bottoms <bottoms@debian.org>  Sun, 28 Aug 2016 18:00:54 -0400
+
+log4cpp (1.1.1-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #727068, #697386, #743436)
+  * Use dh-autoreconf (Closes: #830459, #529907)
+  * Bump Standards-Version to 3.9.8
+  * Add myself to Uploaders, add log4cpp to collab-maint
+
+ -- A. Maitland Bottoms <bottoms@debian.org>  Fri, 15 Jul 2016 17:10:40 -0400
+
+log4cpp (1.0-4.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Rename library packages for g++ 5 transition, patch
+    from Ubuntu (see #791191)
+
+ -- Jonathan Wiltshire <jmw@debian.org>  Sun, 09 Aug 2015 19:34:17 +0100
+
+log4cpp (1.0-4) unstable; urgency=low
+
+  * Add patch to fix FTBFS with gcc 4.3. Thanks to Barry deFreeze.
+    (Closes: #455336)
+  * Add patch to remove log4cpp_cflags from pkgconfig file. (Closes: #472289)
+
+ -- Fathi Boudra <fabo@debian.org>  Sun, 06 Apr 2008 09:45:37 +0200
+
+log4cpp (1.0-3) unstable; urgency=low
+
+  * Update my e-mail address.
+  * Add libtool and automake build dependencies.
+  * Bump Standards-Version to 3.7.3.
+  * Use Homepage field.
+  * Build with --as-needed linker flag.
+  * Fix failure on sparc auto-build due to the bump soname patch.
+    (Closes: #451513)
+  * Add ACLOCAL_AMFLAGS patch.
+  * Add doc install path patch.
+
+ -- Fathi Boudra <fabo@debian.org>  Fri, 07 Dec 2007 16:06:22 +0100
+
+log4cpp (1.0-2) unstable; urgency=low
+
+  * Bump SONAME. (Closes: #445928).
+    The 1.0 release of log4cpp removed the Category::Stream::operator<< method
+    that takes Category::Stream::Separator values and indeed the whole
+    Separator enum in favor of handling ends of lines differently.
+    This is a change to the public ABI that breaks existing programs and
+    libraries linked with the log log4cpp and results in run-time load errors.
+
+ -- Fathi Boudra <fboudra@free.fr>  Wed, 10 Oct 2007 14:01:46 +0200
+
+log4cpp (1.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #432729, #445173)
+  * Switch to cdbs/quilt.
+  * Remove patches. Merged upstream.
+  * Update control:
+    * Remove dpatch, libtool, automake1.9 build-dependencies.
+    * Add cdbs and quilt build-dependencies.
+    * Bump Standards-Version to 3.7.2.
+  * Add missing files in liblog4cpp4-dev.install:
+    * log4cpp-config
+    * log4cpp.m4
+  * Add -lpthread to LDFLAGS to fix FTBFS.
+
+ -- Fathi Boudra <fboudra@free.fr>  Thu, 04 Oct 2007 09:11:00 +0200
+
+log4cpp (0.3.5-rc3-1) unstable; urgency=low
+
+  * Updated version (Closes: #360015)
+  * Updated control and copyright files
+  * Fixed Manipulator.hh typo
+
+ -- Fathi Boudra <fboudra@free.fr>  Thu, 30 Mar 2006 10:25:25 +0200
+
+log4cpp (0.3.4b-1) unstable; urgency=low
+
+  * New maintainer (Closes: #303794)
+  * New upstream release (Closes: #287204)
+  * GNU C++ 4.0 ABI transition
+  * Updated debian/control and debian/copyright
+  * Removed debian dir dependency
+  * Updated autotools build system
+
+ -- Fathi Boudra <fboudra@free.fr>  Tue, 16 Aug 2005 12:59:12 +0200
+
+log4cpp (0.2.8-2) unstable; urgency=low
+
+  * QA Group upload orphaning this package
+  * debian/control: [liblog4cpp-dev]: change Section to libdevel
+
+ -- Andrew Pollock <apollock@debian.org>  Fri, 18 Mar 2005 12:26:35 +1100
+
+log4cpp (0.2.8-1) unstable; urgency=low
+
+  * Latest stable upstream release. (Closes: #199450)
+  * Close bugs fixed by NMU's (Closes: #192318, #203750)
+
+ -- Marcel Harkema <marcel@debian.org>  Wed, 21 July 2004 10:43:00 +0200
+
+log4cpp (0.2.7-1.1) unstable; urgency=low
+
+  * Non-maintainer upload
+  * tests/Clock.hh: Changed long long int to int64_t, thanks to
+    Matt Kraai <kraai@alumni.cmu.edu> (Closes: #203750)
+  * Makefile.am: Added "ACLOCAL_AMFLAGS = -I m4" line
+  * debian/rules: Removes config.{cache,status,log} in clean target
+  * Ran autoreconf --force --install, thanks to
+    Ryan Murray <rmurray@debian.org> (Closes: #192318)
+
+ -- Roland Stigge <stigge@antcom.de>  Thu,  4 Sep 2003 23:06:06 +0200
+
+log4cpp (0.2.7-1) unstable; urgency=low
+
+  * New upstream. (Closes: #176653)
+  * Package name now contains the proper library soname. (Closes: #145892)
+  * GNU C++ 3.2 ABI transition.
+
+ -- Marcel Harkema <marcel@debian.org>  Tue, 28 January 2003 10:02:00 +0100
+
+log4cpp (0.2.5-3) unstable; urgency=low
+
+  * Fix error in upstream source that may cause build errors on non-i386
+    architectures.
+
+ -- Marcel Harkema <marcel@debian.org>  Tue, 9 October 2001 13:53:14 +0200
+
+log4cpp (0.2.5-2) unstable; urgency=low
+
+  * Use rdtscl() on i386 only in tests/Clock.cpp. (Closes: #106002)
+
+ -- Marcel Harkema <marcel@debian.org>  Fri, 20 July 2001 17:24:17 +0200
+
+log4cpp (0.2.5-1) unstable; urgency=low
+
+  * New upstream version.
+  * New upstream includes recent config.{sub,guess}.  (Closes: #105780)
+
+ -- Marcel Harkema <marcel@debian.org>  Mon, 11 June 2001 18:27:13 +0200
+
+log4cpp (0.2.4b-1) unstable; urgency=low
+
+  * New upstream version.
+  * More precise build-depends.  Split -doc package, doxygen & graphviz are
+    no longer needed. (Closes: #93843)
+
+ -- Marcel Harkema <marcel@debian.org>  Sat, 21 April 2001 11:12:39 +0200
+
+log4cpp (0.2.3b-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Marcel Harkema <marcel@debian.org>  Wed, 11 April 2001 15:59:32 +0100
+
+log4cpp (0.2.2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #88439)
+
+ -- Marcel Harkema <marcel@debian.org>  Sat, 7 April 2001 19:24:11 +0100
+
