@@ -1,0 +1,22 @@
+--- a/configure
++++ b/configure
+@@ -1964,7 +1964,7 @@
+ #  ? :+1 : ?   == just some internal changes, nothing breaks but might work
+ #                 better
+ # CURRENT : REVISION : AGE
+-LT_VERSION=4:6:0
++LT_VERSION=5:5:0
+ 
+ 
+ 
+--- a/configure.in
++++ b/configure.in
+@@ -11,7 +11,7 @@
+ #  ? :+1 : ?   == just some internal changes, nothing breaks but might work 
+ #                 better
+ # CURRENT : REVISION : AGE
+-LT_VERSION=4:6:0
++LT_VERSION=5:5:0
+ 
+ AC_SUBST(LT_VERSION)
+ 

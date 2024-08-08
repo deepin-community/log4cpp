@@ -1,0 +1,42 @@
+.TH LOG4CPP-CONFIG 1 "August 2, 2016"
+.SH NAME
+log4cpp-config - script to get information about the installed version of log4cpp
+.SH SYNOPSIS
+.B  log4cpp-config [\-\-prefix\fI[=DIR]\fP] [\-\-exec\-prefix\fI[=DIR]\fP] [\-\-version] [\-\-libs] [\-\-cflags] [LIBRARIES]
+.SH DESCRIPTION
+.PP
+\fIlog4cpp-config\fP is a tool that is used to configure to determine
+the compiler and linker flags that should be used to compile
+and link programs that use \fIlog4cpp\fP. 
+.
+.SH OPTIONS
+\fIlog4cpp-config\fP accepts the following options:
+.TP 8
+.B  LIBRARIES
+This argument is currently ignored as log4cpp as only one library.
+.TP 8
+.B  \-\-version
+Print the currently installed version of \fIlog4cpp\fP on the standard output.
+.TP 8
+.B  \-\-libs
+Print the linker flags that are necessary to link a \fIlog4cpp\fP program.
+.TP 8
+.B  \-\-cflags
+Print the compiler flags that are necessary to compile a \fIlog4cpp\fP program.
+.TP 8
+.B  \-\-prefix=PREFIX
+If specified, use PREFIX instead of the installation prefix that \fIlog4cpp\fP
+was built with when computing the output for the \-\-cflags and
+\-\-libs options. This option is also used for the exec prefix
+if \-\-exec\-prefix was not specified. This option must be specified
+before any \-\-libs or \-\-cflags options.
+.TP 8
+.B  \-\-exec\-prefix=PREFIX
+If specified, use PREFIX instead of the installation exec prefix that
+\fIlog4cpp\fP was built with when computing the output for the \-\-cflags
+and \-\-libs options.  This option must be specified before any
+\-\-libs or \-\-cflags options.
+.SH AUTHORS
+.B log4cpp 
+was written by Bastiaan Bakker <bastiaan.bakker@lifeline.nl> and
+Thomas Wabner <waffel@hora-obscura.de>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<descriptor>
+
+<headers>
+debian/tmp/usr/include/
+</headers>
+<skip_headers>
+log4cpp/config-win32.h
+log4cpp/IdsaAppender.hh
+log4cpp/NTEventLogAppender.hh
+log4cpp/RemoteSyslogAppender.hh
+log4cpp/threading
+log4cpp/Win32DebugAppender.hh
+</skip_headers>
+<libs>
+debian/tmp/usr/lib/
+</libs>
+
+</descriptor>
